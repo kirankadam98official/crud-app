@@ -1,0 +1,8 @@
+a{
+    margin: 0.5rem;
+    text-decoration: none;
+}
+.active{
+    color: darkblue;
+    background-color: aqua;
+}

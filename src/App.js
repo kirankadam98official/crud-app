@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import AddUser from "./Pages/AddUser"
+
+import Home from "./Pages/Home"
+
+import EditUser from "./Pages/EdiUser"
+
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Navbar from "./Navbar"
+
+function App (){
+  return(
+  <>
+  <BrowserRouter>
+
+             <Navbar/>
+                 <Routes>
+
+                   <Route path="/" element={ <Home/>}/>
+
+                   <Route path="/adduser" element={ <AddUser/>} />
+
+                   <Route path="/edituser/:userId" element={ <EditUser/>}/>
+
+                   <Route path="*" element={ <h2 style={{color:"red",textAlign:"center"}}> 404 : page is not found ...Go to home page </h2>}/>
+
+             </Routes>
+ 
+  
+  </BrowserRouter>
+  
+
+  </>
+       
+
+       
+    )
+
 }
 
-export default App;
+
+export default App
